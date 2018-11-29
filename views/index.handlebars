@@ -30,6 +30,14 @@
 
 			<h2>Burgers that have been eaten!</h2>
 
+			<ul>
+				{{#each burgers}}
+				{{#if devoured}}
+				<li>{{burger_name}}</li>
+				{{/if}}
+				{{/each}}
+			</ul>
+
 		</div>
 
 	</div>

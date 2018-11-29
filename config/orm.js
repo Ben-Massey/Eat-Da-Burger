@@ -36,15 +36,17 @@ var orm = {
     selectAll: function(tableInput, cb) {
       var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
-        if (err) throw err;
-        console.log(result);
+        if (err) { 
+          throw err;
+        }
+        cb(result);
       });
     },
-    insertOne: function(table, Col, vals, cb) {
+    insertOne: function(table, Cols, vals, cb) {
       var queryString = "INSERT INTO" + table
 
       queryString += " (";
-      queryString += Col.toString();
+      queryString += Cols.toString();
       queryString += ")";
       queryString += "VALUES (";
       queryString += printQuestionMarks(vals.length);
