@@ -2,6 +2,8 @@ $(function() {
     $(".change-condition").on("click", function(event) {
       var id = $(this).data("id");
       var newCon = $(this).data("newcondition");
+
+      event.preventDefault();
   
       var newCondition = {
         devoured: newCon
